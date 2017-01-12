@@ -41,6 +41,8 @@
         filter_limit_min: 0.0
         filter_limit_max: 3.0
       </rosparam>
+      <param name="input_frame" value="left_camera_optical_frame"/>
+      <param name="output_frame" value="head"/>
     </node>
 
     <!-- RED -->
@@ -95,7 +97,8 @@
     <node pkg="nodelet" type="nodelet" name="centroid_publisher"
           args="load jsk_pcl/CentroidPublisher $(arg manager)" output="screen">
       <remap from="~input" to="$(arg OUTPUT)" />
-      <param name="frame" value="$(arg CENTROID_FRAME)" />
+      <!-- <param name="frame" value="$(arg CENTROID_FRAME)" /> -->
+      <param name="~frame" value="$(arg CENTROID_FRAME)" />
     </node>
 
     <!-- WIP: console_msg_publisher -->
