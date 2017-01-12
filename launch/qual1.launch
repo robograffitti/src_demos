@@ -1,0 +1,105 @@
+<launch>
+
+  <arg name="INPUT" default="/multisense/camera/points2"/>
+  <arg name="OUTPUT" default="rgb_output"/>
+  <arg name="CENTROID_FRAME" default="target"/>
+  <arg name="DEFAULT_NAMESPACE" default="RGB_color_filter"/>
+
+  <arg name="r_max" default="255" />
+  <arg name="r_min" default="225" />
+  <arg name="g_max" default="255" />
+  <arg name="g_min" default="225" />
+  <arg name="b_max" default="255" />
+  <arg name="b_min" default="225" />
+
+  <arg name="create_manager" default="true" />
+  <arg name="manager" default="rgb_filter_manager" />
+
+  <!-- Need 3 nodelets for each of R , G and B -->
+  <!-- <include file="$(find jsk_pcl_ros)/launch/rgb_color_filter.launch"> -->
+  <!--   <arg name="INPUT" value="$(arg INPUT)"/> -->
+  <!--   <arg name="DEFAULT_NAMESPACE" value="$(arg DEFAULT_NAMESPACE)"/> -->
+  <!--   <arg name="r_max" value="$(arg r_max)" /> -->
+  <!--   <arg name="r_min" value="$(arg r_min)" /> -->
+  <!--   <arg name="g_max" value="$(arg g_max)" /> -->
+  <!--   <arg name="g_min" value="$(arg g_min)" /> -->
+  <!--   <arg name="b_max" value="$(arg b_max)" /> -->
+  <!--   <arg name="b_min" value="$(arg b_min)" /> -->
+  <!-- </include> -->
+
+  <group ns="$(arg DEFAULT_NAMESPACE)">
+
+    <!-- z filter: What does it do...? -->
+    <node if="$(arg create_manager)"
+          pkg="nodelet" type="nodelet" name="$(arg manager)"
+          args="manager" output="screen"/>
+    <node pkg="nodelet" type="nodelet" name="zfilter"
+          args="load pcl/PassThrough $(arg manager)" output="screen">
+      <remap from="~input" to="$(arg INPUT)" />
+      <rosparam>
+        filter_field_name: z
+        filter_limit_min: 0.0
+        filter_limit_max: 3.0
+      </rosparam>
+    </node>
+
+    <!-- RED -->
+    <node pkg="nodelet" type="nodelet" name="r_filter"
+          args="load jsk_pcl/RGBColorFilter $(arg manager)" output="screen">
+      <remap from="~input" to="zfilter/output" />
+      <remap from="~output" to="$(arg OUTPUT)" />
+      <rosparam>
+        use_indices: false
+      </rosparam>
+      <param name="r_limit_max" value="$(arg r_max)" />
+      <param name="r_limit_min" value="$(arg r_min)" />
+      <param name="g_limit_max" value="25" />
+      <param name="g_limit_min" value="0" />
+      <param name="b_limit_max" value="25" />
+      <param name="b_limit_min" value="0" />
+    </node>
+
+    <!-- GREEN -->
+    <node pkg="nodelet" type="nodelet" name="g_filter"
+          args="load jsk_pcl/RGBColorFilter $(arg manager)" output="screen">
+      <remap from="~input" to="zfilter/output" />
+      <remap from="~output" to="$(arg OUTPUT)" />
+      <rosparam>
+        use_indices: false
+      </rosparam>
+      <param name="r_limit_max" value="25" />
+      <param name="r_limit_min" value="0" />
+      <param name="g_limit_max" value="$(arg g_max)" />
+      <param name="g_limit_min" value="$(arg g_min)" />
+      <param name="b_limit_max" value="25" />
+      <param name="b_limit_min" value="0" />
+    </node>
+
+    <!-- BLUE -->
+    <node pkg="nodelet" type="nodelet" name="b_filter"
+          args="load jsk_pcl/RGBColorFilter $(arg manager)" output="screen">
+      <remap from="~input" to="zfilter/output" />
+      <remap from="~output" to="$(arg OUTPUT)" />
+      <rosparam>
+        use_indices: false
+      </rosparam>
+      <param name="r_limit_max" value="25" />
+      <param name="r_limit_min" value="0" />
+      <param name="g_limit_max" value="25" />
+      <param name="g_limit_min" value="0" />
+      <param name="b_limit_max" value="$(arg b_max)" />
+      <param name="b_limit_min" value="$(arg b_min)" />
+    </node>
+
+    <!-- centroid publisher -->
+    <node pkg="nodelet" type="nodelet" name="centroid_publisher"
+          args="load jsk_pcl/CentroidPublisher $(arg manager)" output="screen">
+      <remap from="~input" to="$(arg OUTPUT)" />
+      <param name="frame" value="$(arg CENTROID_FRAME)" />
+    </node>
+
+    <!-- WIP: console_msg_publisher -->
+
+  </group>
+
+</launch>
