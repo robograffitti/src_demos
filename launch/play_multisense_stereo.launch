@@ -1,0 +1,14 @@
+<launch>
+  <arg name="path" default="/home/leus/rosbag/"/>
+  <arg name="file" default="qual1"/>
+
+  <node pkg="rosbag" type="play" name="rosbag_play"
+        output="screen" args="--clock $(arg path)$(arg file).bag"/>
+
+  <!-- Stereo image processing from qual1.launch -->
+  <node ns="multisense/camera" name="stereo_proc" pkg="stereo_image_proc" type="stereo_image_proc" respawn="false" output="log">
+    <param name="disparity_range" type="int" value="128"/>
+    <param name="approximate_sync" type="bool" value="false"/>
+  </node>
+
+</launch>
