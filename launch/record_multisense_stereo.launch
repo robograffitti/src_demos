@@ -1,0 +1,12 @@
+<launch>
+<!-- Move to ~/rosbag -->
+
+<!-- Start simulation -->
+<node pkg="rostopic" type="rostopic" name="srcsim_qual1_starter"
+      args="pub --once /srcsim/qual1/start std_msgs/Empty" output="screen"/>
+
+<!-- Record multisense stereo data -->
+<node pkg="src_demos" type="record_multisense_stereo.sh" name="record_multisense_stereo"
+      output="screen"/>
+
+</launch>
