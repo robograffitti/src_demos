@@ -101,8 +101,10 @@
       <param name="~frame" value="$(arg CENTROID_FRAME)" />
     </node>
 
-    <!-- WIP: console_msg_publisher -->
-
   </group>
+
+  <!-- Console_msg_publisher -->
+  <node pkg="src_demos" type="report_led_color_and_location" name="srcsim_console_publisher"
+        args="" output="screen"/>
 
 </launch>
