@@ -15,6 +15,7 @@
 
 #define INTERVAL 0.25
 #define OFFSET 0.25
+#define COLOR_THRESHOLD 225
 
 using namespace message_filters;
 using namespace sensor_msgs;
@@ -48,6 +49,21 @@ void callback(const PointCloud2ConstPtr& cloud_in, const PointStampedConstPtr& p
   light.r = cloud_xyzrgb->points[0].r;
   light.g = cloud_xyzrgb->points[0].g;
   light.b = cloud_xyzrgb->points[0].b;
+
+  if (light.r > COLOR_THRESHOLD)
+    light.r = 1;
+  else
+    light.r = 0;
+
+  if (light.g > COLOR_THRESHOLD)
+    light.g = 1;
+  else
+    light.g = 0;
+
+  if (light.b > COLOR_THRESHOLD)
+    light.b = 1;
+  else
+    light.b = 0;
 
   // 4. Publication Control Sequencen
   if ( i == 0 | (pts.header.stamp - time_prev).toSec() > INTERVAL ) {
