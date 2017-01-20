@@ -28,9 +28,8 @@ def walkTest():
     msg.unique_id = -1
 
     # push button test Note: Do not push button with walking! 0.02 ~ 0.025
-    msg.footstep_data_list.append(createFootStepOffset(RIGHT, [-0.1, 0.0, 0.0]))
-    msg.footstep_data_list.append(createFootStepOffset(LEFT, [-0.1, 0.0, 0.0]))
-
+    msg.footstep_data_list.append(createFootStepOffset(RIGHT, [0.025, 0.0, 0.0]))
+    msg.footstep_data_list.append(createFootStepOffset(LEFT, [0.025, 0.0, 0.0]))
     footStepListPublisher.publish(msg)
     rospy.loginfo('walk forward...')
     waitForFootsteps(len(msg.footstep_data_list))

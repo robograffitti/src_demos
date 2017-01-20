@@ -28,10 +28,10 @@ def walkTest():
     msg.unique_id = -1
 
     # walk left starting LEFT Note: -0.325 + ELBOW_BENT_UP
-    msg.footstep_data_list.append(createFootStepOffset(LEFT, [0.0, 0.2, 0.0]))
-    msg.footstep_data_list.append(createFootStepOffset(RIGHT, [0.0, 0.2, 0.0]))
-    msg.footstep_data_list.append(createFootStepOffset(LEFT, [0.0, 0.375, 0.0]))
-    msg.footstep_data_list.append(createFootStepOffset(RIGHT, [0.0, 0.375, 0.0]))
+    msg.footstep_data_list.append(createFootStepOffset(LEFT, [0.0, 0.125, 0.0]))
+    msg.footstep_data_list.append(createFootStepOffset(RIGHT, [0.0, 0.125, 0.0]))
+    msg.footstep_data_list.append(createFootStepOffset(LEFT, [0.0, 0.225, 0.0]))
+    msg.footstep_data_list.append(createFootStepOffset(RIGHT, [0.0, 0.225, 0.0]))
 
     footStepListPublisher.publish(msg)
     rospy.loginfo('walk forward...')

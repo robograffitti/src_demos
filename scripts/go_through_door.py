@@ -38,14 +38,7 @@ def walkTest():
     msg.footstep_data_list.append(createFootStepOffset(LEFT, [1.8, 0.0, 0.0]))
     msg.footstep_data_list.append(createFootStepOffset(RIGHT, [2.0, 0.0, 0.0]))
     msg.footstep_data_list.append(createFootStepOffset(LEFT, [2.2, 0.0, 0.0]))
-    msg.footstep_data_list.append(createFootStepOffset(RIGHT, [2.4, 0.0, 0.0]))
-    msg.footstep_data_list.append(createFootStepOffset(LEFT, [2.4, 0.0, 0.0]))
-
-    # walk rightward starting RIGHT Note: -0.325 + ELBOW_BENT_UP
-    # msg.footstep_data_list.append(createFootStepOffset(RIGHT, [0.0, -0.2, 0.0]))
-    # msg.footstep_data_list.append(createFootStepOffset(LEFT, [0.0, -0.2, 0.0]))
-    # msg.footstep_data_list.append(createFootStepOffset(RIGHT, [0.0, -0.325, 0.0]))
-    # msg.footstep_data_list.append(createFootStepOffset(LEFT, [0.0, -0.325, 0.0]))
+    msg.footstep_data_list.append(createFootStepOffset(RIGHT, [2.2, 0.0, 0.0]))
 
     # push button test Note: Do not push button with walking!
     # msg.footstep_data_list.append(createFootStepOffset(RIGHT, [0.025, 0.0, 0.0]))

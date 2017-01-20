@@ -12,7 +12,14 @@ from ihmc_msgs.msg import TrajectoryPoint1DRosMessage
 
 ZERO_VECTOR = [0.0, -1.0, 2.0, 1.0, 0.0, 0.0, 0.0]
 ELBOW_BENT_UP = [0.0, 0.0, 0.0, 2.0, 0.0, 0.0, 0.0]
-PUSH_BUTTON = [0.0, 0.3, 0.2, 2.0, 0.0, 0.0, 0.0]
+
+PUSH_BUTTON_POSE = [-0.700, 0.725, 0.635, 1.155, 0.0, 0.0, 0.0] # push_button_pose
+# PUSH_BUTTON = [-0.800, 0.800, 0.600, 1.000, 0.0, 0.0, 0.0] # push_button 1
+
+# Deprecated
+# PUSH_BUTTON = [-0.75, 0.75, 0.4, 1.0, 0.0, 0.0, 0.0] # ?
+# PUSH_BUTTON = [-0.850, 0.850, 0.650, 0.950, 0.0, 0.001, -0.001] # push_button 2
+# PUSH_BUTTON = [-1.100, 1.100, 0.500, 0.400, 0.0, 0.001, -0.001] # push_button 3
 
 ROBOT_NAME = None
 
@@ -21,7 +28,7 @@ def sendRightArmTrajectory():
 
     msg.robot_side = ArmTrajectoryRosMessage.RIGHT
 
-    msg = appendTrajectoryPoint(msg, 2.0, PUSH_BUTTON)
+    msg = appendTrajectoryPoint(msg, 2.0, PUSH_BUTTON_POSE)
 
     msg.unique_id = -1
 

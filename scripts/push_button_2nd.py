@@ -12,7 +12,7 @@ from ihmc_msgs.msg import TrajectoryPoint1DRosMessage
 
 # PUSH_BUTTON = [-0.700, 0.725, 0.635, 1.155, 0.0, 0.0, 0.0] # push_button_pose
 # PUSH_BUTTON = [-0.800, 0.800, 0.600, 1.000, 0.0, 0.0, 0.0] # push_button 1
-PUSH_BUTTON = [-0.825, 0.825, 0.600, 1.000, 0.0, 0.0, 0.0] # push_button 1
+PUSH_BUTTON = [-0.825, 0.825, 0.575, 0.975, 0.0, 0.0, 0.0] # push_button 1
 
 ROBOT_NAME = None
 

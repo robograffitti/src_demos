@@ -40,8 +40,9 @@ def walkTest():
     msg.footstep_data_list.append(createFootStepOffset(LEFT, [2.2, 0.0, 0.0]))
     msg.footstep_data_list.append(createFootStepOffset(RIGHT, [2.4, 0.0, 0.0]))
     msg.footstep_data_list.append(createFootStepOffset(LEFT, [2.6, 0.0, 0.0]))
-    msg.footstep_data_list.append(createFootStepOffset(RIGHT, [2.8, 0.0, 0.0]))
-    msg.footstep_data_list.append(createFootStepOffset(LEFT, [2.8, 0.0, 0.0]))
+    msg.footstep_data_list.append(createFootStepOffset(RIGHT, [2.6, 0.0, 0.0]))
+    msg.footstep_data_list.append(createFootStepOffset(LEFT, [2.725, 0.0, 0.0]))
+    msg.footstep_data_list.append(createFootStepOffset(RIGHT, [2.725, 0.0, 0.0]))
     # msg.footstep_data_list.append(createFootStepOffset(RIGHT, [2.875, 0.0, 0.0]))
     # msg.footstep_data_list.append(createFootStepOffset(LEFT, [2.875, 0.0, 0.0]))
 
