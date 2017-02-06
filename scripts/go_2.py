@@ -27,16 +27,13 @@ def walkTest():
     msg.execution_mode = 0 # 1 or 3 ?
     msg.unique_id = -1
 
-    msg.footstep_data_list.append(createFootStepOffset(LEFT, [0.35, 0.02, 0.0]))
-    msg.footstep_data_list.append(createFootStepOffset(RIGHT, [0.35, -0.02, 0.0]))
-    msg.footstep_data_list.append(createFootStepOffset(LEFT, [0.75, 0.02, 0.0]))
-    msg.footstep_data_list.append(createFootStepOffset(RIGHT, [1.15, -0.02, 0.0]))
-    msg.footstep_data_list.append(createFootStepOffset(LEFT, [1.55, 0.02, 0.0]))
-    msg.footstep_data_list.append(createFootStepOffset(RIGHT, [1.95, -0.02, 0.0]))
-    msg.footstep_data_list.append(createFootStepOffset(LEFT, [2.35, 0.02, 0.0]))
-    msg.footstep_data_list.append(createFootStepOffset(RIGHT, [2.75, -0.02, 0.0]))
-    msg.footstep_data_list.append(createFootStepOffset(LEFT, [2.75, 0.02, 0.0]))
-    # msg.footstep_data_list.append(createFootStepOffset(RIGHT, [3.20, 0.025, 0.0]))
+    msg.footstep_data_list.append(createFootStepOffset(RIGHT, [0.4, -0.05, 0.0]))
+    msg.footstep_data_list.append(createFootStepOffset(LEFT, [0.8, 0.02, 0.0]))
+    msg.footstep_data_list.append(createFootStepOffset(RIGHT, [1.2, -0.02, 0.0]))
+    msg.footstep_data_list.append(createFootStepOffset(LEFT, [1.6, 0.02, 0.0]))
+    msg.footstep_data_list.append(createFootStepOffset(RIGHT, [2.0, -0.02, 0.0]))
+    msg.footstep_data_list.append(createFootStepOffset(LEFT, [2.0, 0.02, 0.0]))
+    # msg.footstep_data_list.append(createFootStepOffset(RIGHT, [2.0, -0.02, 0.0]))
 
     # msg.footstep_data_list.append(createFootStepOffset(LEFT, [0.25, 0.0, 0.0]))
     # msg.footstep_data_list.append(createFootStepOffset(RIGHT, [0.50, 0.0, 0.0]))

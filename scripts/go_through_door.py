@@ -27,18 +27,23 @@ def walkTest():
     msg.execution_mode = 0
     msg.unique_id = -1
 
-    msg.footstep_data_list.append(createFootStepOffset(LEFT, [0.2, 0.0, 0.0]))
-    msg.footstep_data_list.append(createFootStepOffset(RIGHT, [0.4, 0.0, 0.0]))
-    msg.footstep_data_list.append(createFootStepOffset(LEFT, [0.6, 0.0, 0.0]))
-    msg.footstep_data_list.append(createFootStepOffset(RIGHT, [0.8, 0.0, 0.0]))
-    msg.footstep_data_list.append(createFootStepOffset(LEFT, [1.0, 0.0, 0.0]))
-    msg.footstep_data_list.append(createFootStepOffset(RIGHT, [1.2, 0.0, 0.0]))
-    msg.footstep_data_list.append(createFootStepOffset(LEFT, [1.4, 0.0, 0.0]))
-    msg.footstep_data_list.append(createFootStepOffset(RIGHT, [1.6, 0.0, 0.0]))
-    msg.footstep_data_list.append(createFootStepOffset(LEFT, [1.8, 0.0, 0.0]))
-    msg.footstep_data_list.append(createFootStepOffset(RIGHT, [2.0, 0.0, 0.0]))
-    msg.footstep_data_list.append(createFootStepOffset(LEFT, [2.2, 0.0, 0.0]))
-    msg.footstep_data_list.append(createFootStepOffset(RIGHT, [2.2, 0.0, 0.0]))
+    msg.footstep_data_list.append(createFootStepOffset(LEFT, [0.45, 0.0, 0.0]))
+    msg.footstep_data_list.append(createFootStepOffset(RIGHT, [0.90, 0.0, 0.0]))
+    msg.footstep_data_list.append(createFootStepOffset(LEFT, [1.35, 0.0, 0.0]))
+    msg.footstep_data_list.append(createFootStepOffset(RIGHT, [1.80, 0.0, 0.0]))
+    msg.footstep_data_list.append(createFootStepOffset(LEFT, [2.25, 0.0, 0.0]))
+    msg.footstep_data_list.append(createFootStepOffset(RIGHT, [2.25, 0.0, 0.0]))
+
+    # msg.footstep_data_list.append(createFootStepOffset(LEFT, [0.25, 0.0, 0.0]))
+    # msg.footstep_data_list.append(createFootStepOffset(RIGHT, [0.50, 0.0, 0.0]))
+    # msg.footstep_data_list.append(createFootStepOffset(LEFT, [0.75, 0.0, 0.0]))
+    # msg.footstep_data_list.append(createFootStepOffset(RIGHT, [1.0, 0.0, 0.0]))
+    # msg.footstep_data_list.append(createFootStepOffset(LEFT, [1.25, 0.0, 0.0]))
+    # msg.footstep_data_list.append(createFootStepOffset(RIGHT, [1.5, 0.0, 0.0]))
+    # msg.footstep_data_list.append(createFootStepOffset(LEFT, [1.75, 0.0, 0.0]))
+    # msg.footstep_data_list.append(createFootStepOffset(RIGHT, [2.0, 0.0, 0.0]))
+    # msg.footstep_data_list.append(createFootStepOffset(LEFT, [2.25, 0.0, 0.0]))
+    # msg.footstep_data_list.append(createFootStepOffset(RIGHT, [2.25, 0.0, 0.0]))
 
     # push button test Note: Do not push button with walking!
     # msg.footstep_data_list.append(createFootStepOffset(RIGHT, [0.025, 0.0, 0.0]))
