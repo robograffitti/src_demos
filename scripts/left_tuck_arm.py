@@ -13,7 +13,7 @@ from ihmc_msgs.msg import TrajectoryPoint1DRosMessage
 ZERO_VECTOR = [0.0, -1.0, 2.0, 1.0, 0.0, 0.0, 0.0]
 ELBOW_BENT_UP = [0.0, 0.0, 0.0, 2.0, 0.0, 0.0, 0.0]
 PUSH_BUTTON = [0.0, 0.3, 0.2, 2.0, 0.0, 0.0, 0.0]
-RESET_POSE = [0.0, -1.4, 0.2, -2.0, 0.0, 0.0, 0.0]
+RESET_POSE = [-1.5, -1.4, 0.2, -2.0, 0.0, 0.0, 0.0]
 
 ROBOT_NAME = None
 
