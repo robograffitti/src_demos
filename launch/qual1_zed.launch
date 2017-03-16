@@ -1,6 +1,7 @@
 <launch>
 
-  <arg name="INPUT" default="/camera/depth_registered/points"/>
+  <!-- <arg name="INPUT" default="/camera/depth_registered/points"/> -->
+  <arg name="INPUT" default="/zed/point_cloud/cloud_registered"/>
   <arg name="OUTPUT" default="rgb_output"/>
   <arg name="CENTROID_FRAME" default="target"/>
   <arg name="DEFAULT_NAMESPACE" default="RGB_color_filter"/>
